@@ -54,18 +54,20 @@ function Layout( {
 			<UnsavedChangesWarning />
 			<AutosaveMonitor />
 			<Header />
-			<div id="poststuff" className="edit-post-layout__content" role="region" aria-label={ __( 'Editor content' ) } tabIndex="-1">
+			<div className="edit-post-layout__content" role="region" aria-label={ __( 'Editor content' ) } tabIndex="-1">
 				<EditorNotices />
 				<div className="edit-post-layout__editor">
 					<EditorModeKeyboardShortcuts />
 					{ mode === 'text' && <TextEditor /> }
 					{ mode === 'visual' && <VisualEditor /> }
 				</div>
-				<div className="edit-post-layout__metaboxes">
-					<MetaBoxes location="normal" />
-				</div>
-				<div className="edit-post-layout__metaboxes">
-					<MetaBoxes location="advanced" />
+				<div id="poststuff">
+					<div className="edit-post-layout__metaboxes">
+						<MetaBoxes location="normal" />
+					</div>
+					<div className="edit-post-layout__metaboxes">
+						<MetaBoxes location="advanced" />
+					</div>
 				</div>
 			</div>
 			{ isDefaultSidebarOpened && <Sidebar /> }
